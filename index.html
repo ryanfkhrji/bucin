@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Jadian Yuk !</title>
+  </head>
+  <body>
+    <div class="card bg-love">
+      <img id="thumb" src="bucin.png" alt="thumb" class="img-thumb" />
+      <h1 class="latin text-center">Hai Kamu</h1>
+      <h2 class="text-center">Kamu mau gak jadi pacar aku ?</h2>
+      <div class="card-footer">
+        <div class="btn mau" onclick="mau()">Mau 😍</div>
+        <div class="btn gak" onclick="gakmau(this)" onmouseover="gakmau(this)">Gak ☹️</div>
+      </div>
+      <div class="info text-center mt-16" id="info"></div>
+      <!-- <div class="water-mark text-center">
+        <a href="https://www.tiktok.com/@try_catch_">&#169; Try Catch</a>
+      </div> -->
+    </div>
+    <div class="text-center mt-16" id="musicbox">
+      <audio id="music" src="music.mp3" controls></audio>
+    </div>
+  </body>
+  <script>
+    var _info = document.getElementById("info");
+    var _music = document.getElementById("music");
+    function gakmau(element) {
+      element.style.position = "absolute";
+      element.style.left = `${Math.floor(Math.random() * 90)}%`;
+      element.style.top = `${Math.floor(Math.random() * 90)}%`;
+
+      _info.innerHTML = "Harus Mau Pokoknya 🙄";
+    }
+    function mau() {
+      if (_music.paused) _music.play();
+      _info.innerHTML = "Makasih Sayang 😘. Lagu ini buat kamu.";
+    }
+  </script>
+</html>
